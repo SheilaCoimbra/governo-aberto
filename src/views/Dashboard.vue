@@ -4,8 +4,8 @@
     
     <form class="mb-2" v-if="city" @submit.prevent="loadVisualizations()">
       <div class="d-flex justify-content-between align-items-center">
-        <btn-search></btn-search>
-        <select-category @selected="filterCategory($event)"></select-category>
+        <btn-search @search="titleSearch = $event; loadVisualizations()"></btn-search>
+        <select-category @selected="categorySelected = $event"></select-category>
       </div>
     </form>
     <loading :loading="loading"></loading>
@@ -29,6 +29,7 @@ export default {
   data() {
     return {
       categorySelected: "",
+      titleSearch: "",
       categories: [],
       visualizations: [],
       city: null,
@@ -37,9 +38,6 @@ export default {
     }
   },
   methods: {
-    filterCategory(category) {
-      this.categorySelected = category
-    },
     async loadCityInfo() {
       const cityInfo = await new ApiService().getCityInfo(this.$route.params.state, this.$route.params.city);
       this.state = cityInfo.state;
@@ -52,7 +50,8 @@ export default {
       const filters = {
         state: this.$route.params.state,
         city: this.$route.params.city,
-        category: this.categorySelected.label
+        category: this.categorySelected.label,
+        title: this.titleSearch
       };
 
       if(filters.category == 'Todas categorias') filters.category = "";
