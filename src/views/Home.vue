@@ -9,13 +9,13 @@
       <BrazilMap @selected="currentState = $event.alias" :selected-state="currentState" />
     </div>
 
-    <div class="m-1">Clique no estado ou selecione na lista</div>
-    
     <div class="d-flex justify-content-center" style="margin:auto; max-width: 500px;">
       <StateSelect v-model="currentState" class="form-control form-control-lg mr-2" style="width: 87px"/>
       <CitySelect :disabled="!currentState" v-model="currentCity" :state="currentState" style="font-size:1.15rem"/>
     </div>
 
+    <div class="m-1">Clique no estado ou selecione na lista</div>
+    
     <div class="mt-3">
       <router-link
         style="min-width: 150px; min-height: 50px;" 

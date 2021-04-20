@@ -6,7 +6,7 @@
     </h5>
     <div class="d-flex justify-content-between align-items-center mb-2">
       <div class="d-flex" v-if="edit">
-        <StateSelect v-model="currentState" class="form-control mr-2" style="width: 87px"/>
+        <StateSelect v-model="currentState" class="form-control mr-2" style="width: 87px; height: 35px"/>
         <CitySelect :disabled="!currentState" v-model="currentCity" :state="currentState" class="form-control mr-2" style="max-width:250px" />
       </div>
       <button class="btn btn-light" v-if="edit" @click="onSearch()"><fa icon="search"></fa></button>
