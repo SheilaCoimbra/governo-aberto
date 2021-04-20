@@ -1,0 +1,9 @@
+{
+"countries": [
+	{
+		"id" : 1,
+		"alias" : "br",
+		"name" : "Brasil",
+		"initials" : "BR"
+	}
+]}

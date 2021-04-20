@@ -1,0 +1,219 @@
+{
+"states": [
+	{
+		"id" : 2,
+		"alias" : "ac",
+		"country_id" : 1,
+		"name" : "Acre",
+		"initials" : "AC",
+		"ibge_code" : 12
+	},
+	{
+		"id" : 3,
+		"alias" : "al",
+		"country_id" : 1,
+		"name" : "Alagoas",
+		"initials" : "AL",
+		"ibge_code" : 27
+	},
+	{
+		"id" : 4,
+		"alias" : "ap",
+		"country_id" : 1,
+		"name" : "Amapá",
+		"initials" : "AP",
+		"ibge_code" : 16
+	},
+	{
+		"id" : 5,
+		"alias" : "am",
+		"country_id" : 1,
+		"name" : "Amazonas",
+		"initials" : "AM",
+		"ibge_code" : 13
+	},
+	{
+		"id" : 6,
+		"alias" : "ba",
+		"country_id" : 1,
+		"name" : "Bahia",
+		"initials" : "BA",
+		"ibge_code" : 29
+	},
+	{
+		"id" : 7,
+		"alias" : "ce",
+		"country_id" : 1,
+		"name" : "Ceará",
+		"initials" : "CE",
+		"ibge_code" : 23
+	},
+	{
+		"id" : 8,
+		"alias" : "df",
+		"country_id" : 1,
+		"name" : "Distrito Federal",
+		"initials" : "DF",
+		"ibge_code" : 53
+	},
+	{
+		"id" : 9,
+		"alias" : "es",
+		"country_id" : 1,
+		"name" : "Espírito Santo",
+		"initials" : "ES",
+		"ibge_code" : 32
+	},
+	{
+		"id" : 10,
+		"alias" : "go",
+		"country_id" : 1,
+		"name" : "Goiás",
+		"initials" : "GO",
+		"ibge_code" : 52
+	},
+	{
+		"id" : 11,
+		"alias" : "ma",
+		"country_id" : 1,
+		"name" : "Maranhão",
+		"initials" : "MA",
+		"ibge_code" : 21
+	},
+	{
+		"id" : 12,
+		"alias" : "mt",
+		"country_id" : 1,
+		"name" : "Mato Grosso",
+		"initials" : "MT",
+		"ibge_code" : 51
+	},
+	{
+		"id" : 13,
+		"alias" : "ms",
+		"country_id" : 1,
+		"name" : "Mato Grosso do Sul",
+		"initials" : "MS",
+		"ibge_code" : 50
+	},
+	{
+		"id" : 14,
+		"alias" : "mg",
+		"country_id" : 1,
+		"name" : "Minas Gerais",
+		"initials" : "MG",
+		"ibge_code" : 31
+	},
+	{
+		"id" : 15,
+		"alias" : "pa",
+		"country_id" : 1,
+		"name" : "Pará",
+		"initials" : "PA",
+		"ibge_code" : 15
+	},
+	{
+		"id" : 16,
+		"alias" : "pb",
+		"country_id" : 1,
+		"name" : "Paraíba",
+		"initials" : "PB",
+		"ibge_code" : 25
+	},
+	{
+		"id" : 17,
+		"alias" : "pr",
+		"country_id" : 1,
+		"name" : "Paraná",
+		"initials" : "PR",
+		"ibge_code" : 41
+	},
+	{
+		"id" : 18,
+		"alias" : "pe",
+		"country_id" : 1,
+		"name" : "Pernambuco",
+		"initials" : "PE",
+		"ibge_code" : 26
+	},
+	{
+		"id" : 19,
+		"alias" : "pi",
+		"country_id" : 1,
+		"name" : "Piauí",
+		"initials" : "PI",
+		"ibge_code" : 22
+	},
+	{
+		"id" : 20,
+		"alias" : "rj",
+		"country_id" : 1,
+		"name" : "Rio de Janeiro",
+		"initials" : "RJ",
+		"ibge_code" : 33
+	},
+	{
+		"id" : 21,
+		"alias" : "rn",
+		"country_id" : 1,
+		"name" : "Rio Grande do Norte",
+		"initials" : "RN",
+		"ibge_code" : 24
+	},
+	{
+		"id" : 22,
+		"alias" : "rs",
+		"country_id" : 1,
+		"name" : "Rio Grande do Sul",
+		"initials" : "RS",
+		"ibge_code" : 43
+	},
+	{
+		"id" : 23,
+		"alias" : "ro",
+		"country_id" : 1,
+		"name" : "Rondônia",
+		"initials" : "RO",
+		"ibge_code" : 11
+	},
+	{
+		"id" : 24,
+		"alias" : "rr",
+		"country_id" : 1,
+		"name" : "Roraima",
+		"initials" : "RR",
+		"ibge_code" : 14
+	},
+	{
+		"id" : 25,
+		"alias" : "sc",
+		"country_id" : 1,
+		"name" : "Santa Catarina",
+		"initials" : "SC",
+		"ibge_code" : 42
+	},
+	{
+		"id" : 26,
+		"alias" : "sp",
+		"country_id" : 1,
+		"name" : "São Paulo",
+		"initials" : "SP",
+		"ibge_code" : 35
+	},
+	{
+		"id" : 27,
+		"alias" : "se",
+		"country_id" : 1,
+		"name" : "Sergipe",
+		"initials" : "SE",
+		"ibge_code" : 28
+	},
+	{
+		"id" : 28,
+		"alias" : "to",
+		"country_id" : 1,
+		"name" : "Tocantins",
+		"initials" : "TO",
+		"ibge_code" : 17
+	}
+]}
