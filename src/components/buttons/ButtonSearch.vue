@@ -1,6 +1,6 @@
 <template>
   <div class="input-group">
-    <input v-model="query" class="form-control py-2 border-right-0 border" type="search" placeholder="Buscar visualizações">
+    <input @keyup.enter="$emit('search', query)" v-model="query" class="form-control py-2 border-right-0 border" type="search" placeholder="Buscar visualizações">
     <div class="input-group-append">
       <div class="input-group-text" style="cursor:pointer;" @click="$emit('search', query)"><fa icon="search"></fa></div>
     </div>
