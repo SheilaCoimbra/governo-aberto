@@ -31,10 +31,12 @@
         </li>
       </ul>
       <form class="form-inline my-2 my-lg-0 d-none d-sm-none d-md-block">
-        <div class="form-group align-items-center">
-          <StateSelect v-model="currentState" class="form-control form-control-sm mr-2" />
-          <CitySelect v-model="currentCity" :state="currentState" class="form-control form-control-sm" />
-          <router-link class="text-white ml-2" :to="getRoute()"><fa class="nav-search-icon" icon="search" /></router-link>
+        <div class="d-flex justify-content-end" style="min-width: 300px;">
+          <StateSelect v-model="currentState" class="form-control mr-2" style="height: 35px;"/>
+          <CitySelect v-model="currentCity" :state="currentState" class="form-control" />
+          <div style="padding-top: 4px;">
+            <router-link class="text-white ml-2" :to="getRoute()"><fa class="nav-search-icon" icon="search" /></router-link>
+          </div>
         </div>
       </form>
     </div>

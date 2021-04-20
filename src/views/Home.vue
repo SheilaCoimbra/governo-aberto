@@ -13,7 +13,7 @@
     
     <div class="d-flex justify-content-center" style="margin:auto; max-width: 500px;">
       <StateSelect v-model="currentState" class="form-control form-control-lg mr-2" style="width: 87px"/>
-      <CitySelect :disabled="!currentState" v-model="currentCity" :state="currentState" class="form-control form-control-lg" />
+      <CitySelect :disabled="!currentState" v-model="currentCity" :state="currentState" style="font-size:1.15rem"/>
     </div>
 
     <div class="mt-3">

@@ -1,5 +1,11 @@
 <template>
-  <select v-bind="$attrs" @input="$emit('input', $event.target.value)">
+  <model-select 
+    :options="citiesSelect" 
+    @input="$emit('input', $event)" 
+    :value="value" 
+    :placeholder="loading ? 'Carregando...' : 'CIDADE'"
+  ></model-select>
+  <!-- <select v-bind="$attrs">
     <option v-if="loading">Carregando...</option>
     <option value="">Cidade</option>
     <option v-if="!state">Selecione o estado</option>
@@ -8,7 +14,7 @@
         v-for="city in cities" 
         :value="city.alias"
         :selected="value == city.alias">{{ city.name }}</option>
-  </select>
+  </select> -->
   <!-- <v-select
     :value="getValue()"
     @input="setValue($event)"
@@ -57,6 +63,16 @@ export default {
     },
     setValue(city) {
       this.$emit('input', city.alias)
+    }
+  },
+  computed: {
+    citiesSelect() {
+      return this.cities.map(city => {
+        return {
+          value: city.alias,
+          text: city.name
+        };
+      });
     }
   },
   watch: {

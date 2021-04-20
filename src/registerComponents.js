@@ -11,7 +11,6 @@ Vue.component('btn-download-dataset-csv', require("@/components/buttons/ButtonDo
 Vue.component('btn-download-dataset-json', require("@/components/buttons/ButtonDownloadDatasetJson").default);
 Vue.component('select-category', require("@/components/form/CategorySelect").default);
 
-import vueSelect from "vue-multiselect";
-Vue.component("v-select", vueSelect);
-
-import "vue-multiselect/dist/vue-multiselect.min.css";
+import 'vue-search-select/dist/VueSearchSelect.css'
+import { ModelSelect } from 'vue-search-select'
+Vue.component('model-select', ModelSelect);
