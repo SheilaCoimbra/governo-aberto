@@ -21,7 +21,9 @@
         style="min-width: 150px; min-height: 50px;" 
         :class="[!currentState || !currentCity ? 'btn-secondary' : 'btn-success', { 'disabled' : !currentState || !currentCity }]"
         class="btn btn-lg" 
-        :to="{ path: '/cidades/' + currentState + '/' + currentCity }">Acessar</router-link>
+        :to="{ path: '/cidades/' + currentState + '/' + currentCity }">
+          {{ currentState && currentCity ? 'Acessar' : 'Selecione' }}
+      </router-link>
     </div>
     
 

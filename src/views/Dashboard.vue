@@ -18,9 +18,6 @@
 </template>
 
 <script>
-// @ is an alias to /src
-// import HelloWorld from '@/components/HelloWorld.vue'
-// import BarChart from '@/components/charts/BarChart';
 import CardVisualization from '@/components/cards/CardVisualization';
 import CityHeader from '@/components/CityHeader';
 import ApiService from '@/services/ApiService';
