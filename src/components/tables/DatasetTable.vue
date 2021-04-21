@@ -1,23 +1,30 @@
 <template>
-  <div v-if="table.length > 0">
-    <div class="m-2 text-right">
-      <btn-download-dataset-csv :name="$route.params.name" :city="city.id"></btn-download-dataset-csv>
-      <btn-download-dataset-json :name="$route.params.name" :city="city.id"></btn-download-dataset-json>
+  <div>
+    <div class="my-2">
+      <button class="btn btn-light btn-sm" @click="page--; loadDataset()" :disabled="page == 1">Anterior</button>
+      {{ page }}
+      <button class="btn btn-light btn-sm" @click="page++; loadDataset()" :disabled="table.length == 0">Próximo</button>
     </div>
-  
-    <div class="table-responsive">
-      <table class="table">
-        <thead>
-          <tr>
-            <th :key="index" v-for="(column, index) in table" scope="col"> {{ column.title }} </th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr :key="i" v-for="i in getTableRowsNumber()">
-            <td :key="index" v-for="(column, index) in table">{{ column.data[i] }}</td>
-          </tr>
-        </tbody>
-      </table>
+    <div v-if="table.length > 0">
+      <div class="m-2 text-right">
+        <btn-download-dataset-csv :name="$route.params.name" :city="city.id"></btn-download-dataset-csv>
+        <btn-download-dataset-json :name="$route.params.name" :city="city.id"></btn-download-dataset-json>
+      </div>
+    
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <tr>
+              <th :key="index" v-for="(column, index) in table" scope="col"> {{ column.title }} </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr :key="i" v-for="i in getTableRowsNumber()">
+              <td :key="index" v-for="(column, index) in table">{{ column.data[i] }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
 </template>
@@ -36,7 +43,8 @@ export default {
     return {
       state: null,
       city: null,
-      table: []
+      table: [],
+      page: 1
     }
   },
   mounted() {
@@ -55,7 +63,7 @@ export default {
       this.table = [];
       this.table = await new ApiService().loadDatasetTable(
         this.$route.params.name, 
-        { city: this.city.id, page: 1, perPage: 50 }
+        { city: this.city.id, page: this.page, perPage: 10 }
       );
     },
     getTableRowsNumber() {

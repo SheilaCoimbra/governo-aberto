@@ -1,5 +1,5 @@
 <template>
-    <div class="text-left mb-2 p-2" style="border: 1px solid #CCC; min-height: 100px;" v-if="city">
+    <div class="text-left p-2" style="border: 1px solid #CCC; min-height: 100px;" v-if="city">
         <div class="d-flex justify-content-between align-items-center">
           <SelectCityState :state="state" :city="city" @search="$router.push('/cidades/' + $event.state + '/' + $event.city)"/>
         </div>

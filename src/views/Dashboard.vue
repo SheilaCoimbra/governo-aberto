@@ -2,7 +2,7 @@
   <div>
     <CityHeader :city="city" :state="state"/>
     
-    <form class="mb-2" v-if="city" @submit.prevent="loadVisualizations()">
+    <form class="my-3" v-if="city" @submit.prevent="loadVisualizations()">
       <div class="d-flex justify-content-between align-items-center">
         <btn-search @search="titleSearch = $event; loadVisualizations()"></btn-search>
         <select-category @selected="categorySelected = $event"></select-category>
