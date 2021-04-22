@@ -19,7 +19,19 @@ Vue.component('fa', FontAwesomeIcon);
 
 Vue.config.productionTip = false
 Vue.use(VueGtag, {
-  config: { id: "G-13QKBTZWY7" }
+  config: { 
+    id: "G-13QKBTZWY7",
+    params: {
+      send_page_view: false
+    }
+  },
+  pageTrackerScreenviewEnabled: true,
+  pageTrackerTemplate(to) {
+    return {
+      page_title: to.meta.title,
+      page_path: to.path
+    }
+  }
 });
 
 require("./registerComponents");
