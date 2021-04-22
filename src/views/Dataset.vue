@@ -1,5 +1,6 @@
 <template>
   <div>
+    <loading :loading="loading"></loading>
     <h1 v-if="dataset">{{ dataset.title }}</h1>
     <h6 v-if="dataset">{{ city.name }} / {{ state.initials }} </h6>
     <!-- <div class="text-left">
@@ -10,7 +11,7 @@
       <fa class="fa" icon="file-code"></fa> Código utilizado no tratamento dos dados: <a target="_blank" href="https://github.com/GovernoAberto/dataset-transparencia-repasses">Github</a>
     </h6>
     </div> -->
-    <DatasetTable :dataset-name="$route.params.name" />
+    <DatasetTable v-if="dataset" :dataset-name="$route.params.name" />
   </div>
 </template>
 
@@ -20,10 +21,12 @@ import ApiService from '@/services/ApiService';
 
 export default {
   mounted() {
-    this.loadCityInfo().then(() => { this.loadDataset(); });
+    this.loading = true;
+    this.loadCityInfo().then(() => { this.loadDataset().then(() => { this.loading = false; }); });
   },
   data() {
     return {
+      loading: false,
       state: null,
       city: null,
       dataset: null
@@ -47,7 +50,8 @@ export default {
     DatasetTable
   },
   $route(){
-    this.loadCityInfo().then(() => { this.loadDataset(); });
+    this.loading = true;
+    this.loadCityInfo().then(() => { this.loadDataset().then(() => { this.loading = false; }); });
   },
 }
 </script>
