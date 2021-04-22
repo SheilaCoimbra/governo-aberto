@@ -4,6 +4,7 @@ import Home from '../views/Home.vue'
 import Dashboard from '../views/Dashboard.vue'
 import Visualization from '../views/Visualization.vue'
 import Dataset from '../views/Dataset.vue'
+import Projects from '../views/Projects.vue'
 
 Vue.use(VueRouter)
 
@@ -12,6 +13,11 @@ const routes = [
     path: '/',
     name: 'Home',
     component: Home
+  },
+  {
+    path: '/projetos',
+    name: 'Projects',
+    component: Projects
   },
   {
     path: '/cidades/:state/:city',

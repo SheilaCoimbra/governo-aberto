@@ -5,7 +5,7 @@
       <h5 class="welcome-subtitle">Informações sobre a sua cidade</h5>
     </div>
 
-    <div style="max-width: 370px; margin:auto; margin-top: 10px; margin-bottom: 10px; padding-right: 20px;">
+    <div style="max-width: 350px; margin:auto; margin-top: 10px; margin-bottom: 10px; padding-right: 20px;">
       <BrazilMap @selected="currentState = $event.alias" :selected-state="currentState" />
     </div>
 

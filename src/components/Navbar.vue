@@ -1,10 +1,5 @@
 <template>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
-    <!-- <template v-if="hasPrevious">
-      <router-link class="btn btn-sm navbar-brand" :to="{ path: previousPath }">
-        <fa icon="arrow-left"></fa>
-      </router-link>
-    </template> -->
     <btn-back></btn-back>
     <router-link class="navbar-brand" :to="{ name: 'Home' }">
       <img style="width: 30px; margin-bottom: 5px;" src="../assets/logo-brazil.png" />
@@ -24,7 +19,7 @@
           <router-link class="nav-link" :to="{ name: 'Home' }">Home <span class="sr-only">(current)</span></router-link>
         </li>
         <li class="nav-item">
-          <router-link class="nav-link" :to="{ name: 'Home' }">Projetos <span class="sr-only">(current)</span></router-link>
+          <router-link class="nav-link" :to="{ name: 'Projects' }">Projetos <span class="sr-only">(current)</span></router-link>
         </li>
         <li class="nav-item">
           <router-link class="nav-link" :to="{ name: 'Home' }">Sobre <span class="sr-only">(current)</span></router-link>

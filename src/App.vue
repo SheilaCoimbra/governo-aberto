@@ -1,11 +1,12 @@
 <template>
   <div id="app">
     <Navbar/>
-    <div class="container-fluid mt-2">
+    <div class="container-fluid mt-2 mb-5">
       <transition name="fade" mode="out-in">
         <router-view/>
       </transition>
     </div>
+    <a class="btn btn-primary btn-survery">Pesquisa :)</a>
   </div>
 </template>
 
@@ -50,5 +51,11 @@ export default {
 }
 .fade-enter, .fade-leave-active {
   opacity: 0
+}
+
+.btn-survery {
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
 }
 </style>
