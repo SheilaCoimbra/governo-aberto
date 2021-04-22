@@ -6,7 +6,7 @@
         <router-view/>
       </transition>
     </div>
-    <a v-if="$route.name != 'Home'" target="_blank" href="https://forms.gle/GCEbWsMw2QiGXiPy8" class="btn btn-primary btn-survery">Pesquisa do TCC 😄</a>
+    <a v-if="$route.name != 'Home'" @click="openSurvey()" class="btn btn-primary btn-survey">Pesquisa do TCC 😄</a>
   </div>
 </template>
 
@@ -17,6 +17,12 @@ export default {
   name: 'Home',
   components: {
     Navbar
+  },
+  methods: {
+    openSurvey() {
+      this.$gtag.event('Pesquisa');
+      window.open("https://forms.gle/GCEbWsMw2QiGXiPy8", "_blank");
+    }
   }
 }
 
@@ -53,7 +59,7 @@ export default {
   opacity: 0
 }
 
-.btn-survery {
+.btn-survey {
   position: fixed;
   right: 10px;
   bottom: 10px;
