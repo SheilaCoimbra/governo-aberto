@@ -54,6 +54,7 @@ export default {
       if(filters.category == 'Todas categorias') filters.category = "";
       
       this.visualizations = await new ApiService().getVisualizations(filters);
+      this.$gtag.event('Painel', { event_category: this.categorySelected.label, event_label: this.$route.params.city + "/" + this.$route.params.state })
 
       this.loading = false;
     }
@@ -62,7 +63,6 @@ export default {
     let api = new ApiService();
     this.categories = await api.getCategories();
     this.loadCityInfo().then(() => this.loadVisualizations());
-    this.$gtag.event('dashboard', { event_category: 'Municipio', event_label: this.$route.params.state + '/' + this.$route.params.city })
   },
   components: {
     CardVisualization, CityHeader

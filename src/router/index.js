@@ -12,27 +12,42 @@ const routes = [
   {
     path: '/',
     name: 'Home',
-    component: Home
+    component: Home,
+    meta: {
+      title: "Governo Aberto - Inicio"
+    }
   },
   {
     path: '/projetos',
     name: 'Projects',
-    component: Projects
+    component: Projects,
+    meta: {
+      title: "Governo Aberto - Projetos"
+    }
   },
   {
     path: '/cidades/:state/:city',
     name: 'Dashboard',
-    component: Dashboard
+    component: Dashboard,
+    meta: {
+      title: "Governo Aberto - Painel"
+    }
   },
   {
     path: '/cidades/:state/:city/visao/:alias',
     name: 'Visualization',
-    component: Visualization
+    component: Visualization,
+    meta: {
+      title: "Governo Aberto - Visão"
+    }
   },
   {
     path: '/cidades/:state/:city/conjunto/:name',
     name: 'Dataset',
-    component: Dataset
+    component: Dataset,
+    meta: {
+      title: "Governo Aberto - Conjunto"
+    }
   },
   {
     path: '/about',
@@ -49,7 +64,15 @@ const routes = [
 const router = new VueRouter({
   mode: 'history',
   routes
-})
+});
+
+const DEFAULT_TITLE = 'Governo Aberto';
+router.afterEach((to) => {
+  Vue.nextTick(() => {
+    document.title = to.meta.title || DEFAULT_TITLE;
+  });
+});
+
 
 import VueRouterBackButton from 'vue-router-back-button'
 
