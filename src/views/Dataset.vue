@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1 class="visualization_title">Estatistícas de empresas</h1>
+    <h1>Estatistícas de empresas - AJUSTAR</h1>
     <!-- <div class="text-left">
     <h6>
       <fa class="fa" icon="file-alt"></fa> Dados Originais: <a target="_blank" href="https://receita.economia.gov.br/orientacao/tributaria/cadastros/cadastro-nacional-de-pessoas-juridicas-cnpj/dados-publicos-cnpj">Receita Federal</a>
