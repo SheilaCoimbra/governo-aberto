@@ -6,7 +6,7 @@
         <router-view/>
       </transition>
     </div>
-    <a class="btn btn-primary btn-survery">Pesquisa :)</a>
+    <a v-if="$route.name != 'Home'" target="_blank" href="https://docs.google.com/forms/d/1PCwcIUjOmRXJ8D3qdVpG4ddcQkwfl2KQYpIYGPsjJoo/" class="btn btn-primary btn-survery">Pesquisa do TCC 😄</a>
   </div>
 </template>
 
