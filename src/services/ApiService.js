@@ -37,8 +37,15 @@ export default class ApiService {
     return result.data;
   }
 
-  async loadDatasetTable(name, params) {
+  async loadDataset(name, params) {
     let result = await this.getClient().get("dataset/" + name, {
+      params: params
+    });
+    return result.data;
+  }
+
+  async loadDatasetTable(name, params) {
+    let result = await this.getClient().get("dataset/" + name + "/table", {
       params: params
     });
     return result.data;
