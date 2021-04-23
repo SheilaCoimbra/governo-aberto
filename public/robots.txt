@@ -1,2 +1,3 @@
 User-agent: *
 Disallow:
+Sitemap: https://governoaberto.org/sitemap.xml

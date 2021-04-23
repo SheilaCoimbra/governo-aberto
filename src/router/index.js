@@ -14,7 +14,7 @@ const routes = [
     name: 'Home',
     component: Home,
     meta: {
-      title: "Governo Aberto - Inicio"
+      title: "Governo Aberto"
     }
   },
   {
