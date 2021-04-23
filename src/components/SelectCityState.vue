@@ -1,9 +1,9 @@
 <template>
   <span>
-    <h5 class="mb-0" v-if="!edit">
-      <span class="city_name">{{ city.name }}/{{ state.initials }}</span>
+    <h1 class="mb-0 city-name-title" v-if="!edit">
+      {{ city.name }}/{{ state.initials }}
       <button class="btn btn-light d-sm-none" v-if="!edit" @click="onEdit()"><fa icon="edit"></fa></button>
-    </h5>
+    </h1>
     <div class="d-flex justify-content-between align-items-center mb-2">
       <div class="d-flex" v-if="edit">
         <StateSelect v-model="currentState" class="form-control mr-2" style="width: 87px; height: 35px"/>
@@ -54,7 +54,8 @@ export default {
 </script>
 
 <style scoped lang="scss">
-  .city_name {
+  .city-name-title {
+    font-size: 1.25rem;
     @media screen and(min-width:800px) {
       font-size: 1.75rem;
     }

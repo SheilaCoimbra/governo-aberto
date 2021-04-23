@@ -1,8 +1,8 @@
 <template>
   <div style="max-width: 800px; margin:auto;">
-    <h3>
+    <h1 class="projects-title">
       A construção desse trabalho envolveu pesquisas e dados de diversas plataformas existentes, além de entrevistas com pessoas e instituições.
-    </h3>
+    </h1>
     <h6 class="text-right">
       "Se eu vi mais longe, foi por estar sobre ombros de gigantes" <br>
       <small>Isaac Newton</small>
@@ -103,5 +103,7 @@ export default {
 </script>
 
 <style>
-
+  .projects-title {
+    font-size: 1.75rem;
+  }
 </style>

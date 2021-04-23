@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <div class="m-2">
-      <h3 class="welcome-title">Bem-vindo(a) ao Governo Aberto</h3>
+      <h1 class="welcome-title">Bem-vindo(a) ao Governo Aberto</h1>
       <h5 class="welcome-subtitle">Informações sobre a sua cidade</h5>
     </div>
 
@@ -82,6 +82,8 @@ export default {
 
 <style scoped lang="scss">
   .welcome-title {
+    font-size: 1.75rem;
+
     @media screen and (max-width: 480px) {
       font-size: 1.25rem;
     }
