@@ -12,7 +12,7 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import VueGtag from "vue-gtag"
 
 library.add(faBook, faUserShield, faBus, 
-  faDollarSign, faBuilding, faAmbulance, 
+  faDollarSign, faBuilding, faAmbulance,
   faSearch, faQuestionCircle, faFileAlt, faClock,
   faArrowLeft, faFileCsv, faFileCode, faTable, faEdit);
 Vue.component('fa', FontAwesomeIcon);
@@ -33,6 +33,9 @@ Vue.use(VueGtag, {
     }
   }
 });
+
+import VueSocialSharing from 'vue-social-sharing';
+Vue.use(VueSocialSharing);
 
 require("./registerComponents");
 require("./registerPlugins");

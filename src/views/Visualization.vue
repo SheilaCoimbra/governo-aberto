@@ -2,10 +2,34 @@
   <div>
     <loading :loading="loading"></loading>
     <div class="row">
-      <div class="col-12 col-sm-12 col-md-5 col-lg-5 text-left" v-if="visualization && visualization.type == 'chart'">
+      <div class="col-12 col-sm-12 col-md-5 col-lg-5 text-right" v-if="visualization && visualization.type == 'chart'">
         <label class="visualization_title d-block d-sm-none">{{ visualization.title }}</label>
         <h6 class="visualization_subtitle d-block d-sm-none">{{ city.name + '/' + city.state.initials }}</h6>
         <CardVisualization :city="city" :visualization="visualization" :show-title="false" :show-footer="false"/>
+
+        <label>Compartilhe: </label>
+
+        <btn-share-facebook 
+          :url="'https://governoaberto.org' + $route.fullPath" 
+          :title="visualization.title + ' - ' + city.name + '/' + city.state.initials" 
+          :description="visualization.title" 
+          :quote="visualization.title + ' - ' + city.name + '/' + city.state.initials" 
+          hashtags="governoaberto"/>
+
+        <btn-share-whatsapp 
+          :url="'https://governoaberto.org' + $route.fullPath" 
+          :title="visualization.title + ' - ' + city.name + '/' + city.state.initials" 
+          :description="visualization.title" />
+
+        <btn-share-linkedin 
+          :url="'https://governoaberto.org' + $route.fullPath" 
+          :title="visualization.title + ' - ' + city.name + '/' + city.state.initials" 
+          :description="visualization.title" />
+
+        <btn-share-telegram 
+          :url="'https://governoaberto.org' + $route.fullPath" 
+          :title="visualization.title + ' - ' + city.name + '/' + city.state.initials" 
+          :description="visualization.title" />
       </div>
       <div class="col-12 col-sm-12 col-md-7 col-lg-7 text-left mt-2" v-if="visualization">
         <label class="visualization_title d-none d-sm-block">{{ visualization.title }}</label>

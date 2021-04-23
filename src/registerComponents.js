@@ -9,6 +9,10 @@ Vue.component('btn-download-visualization-csv', require("@/components/buttons/Bu
 Vue.component('btn-download-visualization-json', require("@/components/buttons/ButtonDownloadVisualizationJson").default);
 Vue.component('btn-download-dataset-csv', require("@/components/buttons/ButtonDownloadDatasetCsv").default);
 Vue.component('btn-download-dataset-json', require("@/components/buttons/ButtonDownloadDatasetJson").default);
+Vue.component('btn-share-facebook', require("@/components/buttons/ButtonShareFacebook").default);
+Vue.component('btn-share-whatsapp', require("@/components/buttons/ButtonShareWhatsapp").default);
+Vue.component('btn-share-linkedin', require("@/components/buttons/ButtonShareLinkedin").default);
+Vue.component('btn-share-telegram', require("@/components/buttons/ButtonShareTelegram").default);
 Vue.component('select-category', require("@/components/form/CategorySelect").default);
 
 Vue.component('card-reference', require("@/components/cards/CardReference").default);
