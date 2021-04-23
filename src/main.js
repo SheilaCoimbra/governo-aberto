@@ -42,7 +42,8 @@ require("./registerPlugins");
 
 new Vue({
   router,
-  render: function (h) { return h(App) }
+  render: function (h) { return h(App) },
+  mounted: () => document.dispatchEvent(new Event("x-app-rendered")),
 }).$mount('#app')
 
 import 'bootstrap'

@@ -33,8 +33,18 @@ module.exports = {
         'https://governoaberto.org/cidades/sc/florianopolis',
         'https://governoaberto.org/cidades/sp/sao-paulo',
         'https://governoaberto.org/cidades/se/aracaju',
-        'https://governoaberto.org/cidades/to/palmas',
+        'https://governoaberto.org/cidades/to/palmas'
       ]
+    },
+    prerenderSpa: {
+      registry: undefined,
+      renderRoutes: [
+        '/',
+        '/projetos'
+      ],
+      useRenderEvent: true,
+      headless: true,
+      onlyProduction: true
     }
   }
 }

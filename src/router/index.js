@@ -73,9 +73,4 @@ router.afterEach((to) => {
   });
 });
 
-
-import VueRouterBackButton from 'vue-router-back-button'
-
-Vue.use(VueRouterBackButton, { router })
-
 export default router
