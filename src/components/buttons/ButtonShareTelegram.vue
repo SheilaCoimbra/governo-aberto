@@ -7,7 +7,7 @@
     :quote="$attrs.quote"
     :hashtags="$attrs.hashtags"
   >
-    <img class="mt-1 mx-1" src="../../assets/icons/telegram.png" width="40" style="border-radius: 10px; "/>
+    <img class="mt-1 mx-1" src="../../assets/icons/telegram.png" width="40" style="border-radius: 10px;" alt="Compartilhar no Telegram"/>
   </ShareNetwork>
 </template>
 

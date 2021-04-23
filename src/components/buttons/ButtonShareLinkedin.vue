@@ -5,7 +5,7 @@
     :title="$attrs.title"
     :description="$attrs.description"
   >
-    <img class="mt-1 mx-1" src="../../assets/icons/linkedin.svg" width="40"/>
+    <img class="mt-1 mx-1" src="../../assets/icons/linkedin.svg" width="40" alt="Compartilhar no Linkedin"/>
   </ShareNetwork>
 </template>
 

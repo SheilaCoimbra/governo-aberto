@@ -2,7 +2,7 @@
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
     <btn-back></btn-back>
     <router-link class="navbar-brand" :to="{ name: 'Home' }">
-      <img style="width: 30px; margin-bottom: 5px;" src="../assets/logo-brazil.png" />
+      <img style="width: 30px; margin-bottom: 5px;" src="../assets/logo-brazil.png" alt="Logo Governo Aberto" />
       Governo Aberto
       <small class="beta">Beta</small>
     </router-link>

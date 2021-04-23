@@ -12,7 +12,7 @@
         <template v-slot:img>
           <div class="mt-3">
             <a href="https://dados.gov.br/" target="_blank">
-              <img style="width: 120px;" src="../assets/projects/dadosgovbr.png" class="card-img">
+              <img style="width: 120px;" src="../assets/projects/dadosgovbr.png" class="card-img" alt="Portal Brasileiro de Dados Abertos">
             </a>
           </div>
         </template>
@@ -25,7 +25,7 @@
         <template v-slot:img>
           <div class="mt-3">
             <a href="https://brasil.io/" target="_blank">
-              <img style="max-width: 250px; background-color:#3f51b5" src="../assets/projects/brasilio.webp" class="card-img text-center py-3">
+              <img style="max-width: 250px; background-color:#3f51b5" src="../assets/projects/brasilio.webp" class="card-img text-center py-3" alt="Brasil.IO">
             </a>
           </div>
         </template>
@@ -37,7 +37,7 @@
       <card-reference>
         <template v-slot:img>
           <a href="https://www.ok.org.br/" target="_blank">
-            <img style="width: 200px;" src="../assets/projects/openknowledgebrasil.png" class="card-img">
+            <img style="width: 200px;" src="../assets/projects/openknowledgebrasil.png" class="card-img" alt="Open Knowledge Brasil">
           </a>
         </template>
         <template v-slot:text>
@@ -48,7 +48,7 @@
       <card-reference>
         <template v-slot:img>
           <a href="https://institutodegovernoaberto.com.br/" target="_blank">
-            <img style="width: 200px;" src="../assets/projects/institutogovernoaberto.png" class="card-img">
+            <img style="width: 200px;" src="../assets/projects/institutogovernoaberto.png" class="card-img" alt="Instituto Governo Aberto">
           </a>
         </template>
         <template v-slot:text>
@@ -60,7 +60,7 @@
         <template v-slot:img>
           <div class="mt-3">
             <a href="http://www.portaltransparencia.gov.br/" target="_blank">
-              <img style="width: 200px;" src="../assets/projects/portaltransaparencia.png" class="card-img">
+              <img style="width: 200px;" src="../assets/projects/portaltransaparencia.png" class="card-img" alt="Portal da Transparência">
             </a>
           </div>
         </template>
@@ -72,7 +72,7 @@
       <card-reference>
         <template v-slot:img>
           <a href="http://raioxdosmunicipios.insper.edu.br/" target="_blank">
-            <img style="width: 200px;" src="../assets/projects/insper.webp" class="card-img">
+            <img style="width: 200px;" src="../assets/projects/insper.webp" class="card-img" alt="Raio-X dos Municípios">
           </a>
         </template>
         <template v-slot:text>
@@ -84,7 +84,7 @@
         <template v-slot:img>
           <div class="mt-3">
             <a href="https://cidades.ibge.gov.br/" target="_blank">
-              <img style="width: 200px;" src="../assets/projects/ibge.png" class="card-img">
+              <img style="width: 200px;" src="../assets/projects/ibge.png" class="card-img" alt="Cidades@ IBGE">
             </a>
           </div>
         </template>
