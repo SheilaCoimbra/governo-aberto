@@ -1,3 +1,5 @@
+let webpack = require('webpack');
+
 module.exports = {
   pwa: {
     themeColor: '#007bff'
@@ -46,5 +48,10 @@ module.exports = {
       headless: true,
       onlyProduction: true
     }
+  },
+  configureWebpack: {
+    plugins: [
+      new webpack.IgnorePlugin({ resourceRegExp: /moment$/ })
+    ]
   }
 }

@@ -6,7 +6,8 @@ module.exports = {
   },
   'extends': [
     'plugin:vue/essential',
-    'eslint:recommended'
+    'eslint:recommended',
+    "plugin:cypress/recommended"
   ],
   parserOptions: {
     ecmaVersion: 2020
