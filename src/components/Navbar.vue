@@ -25,7 +25,7 @@
           <router-link class="nav-link" :to="{ name: 'Home' }">Sobre <span class="sr-only">(current)</span></router-link>
         </li>
       </ul>
-      <form class="form-inline my-2 my-lg-0 d-none d-sm-none d-md-block">
+      <form class="form-inline my-2 my-lg-0 d-none d-sm-none d-md-block" v-if="!isMobile()">
         <div class="d-flex justify-content-end" style="min-width: 300px;">
           <StateSelect v-model="currentState" class="form-control mr-2" style="height: 35px;"/>
           <CitySelect v-model="currentCity" :state="currentState" class="form-control" />
@@ -54,6 +54,9 @@ export default {
     this.setFields()
   },
   methods: {
+    isMobile() {
+      return (screen.width <= 760);
+    },
     setFields() {
       this.currentState = (this.$route.params.state) ? this.$route.params.state : "";
       this.currentCity = (this.$route.params.city) ? this.$route.params.city : "";

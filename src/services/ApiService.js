@@ -1,72 +1,78 @@
-import axios from 'axios'
+import axios from 'axios';
+import { setupCache } from 'axios-cache-adapter';
+
+const cache = setupCache({
+  maxAge: 15 * 60 * 1000
+})
 
 export default class ApiService {
-
-  getClient() {
-    return axios.create({
-      baseURL: process.env.VUE_APP_API_URL
-    })
+  
+  constructor() {
+    this.http = axios.create({
+      baseURL: process.env.VUE_APP_API_URL,
+      adapter: cache.adapter
+    });
   }
 
   async getStates() {
-    let result = await this.getClient().get("states");
+    let result = await this.http.get("states");
     return result.data;
   }
 
   async getCities(id) {
-    let result = await this.getClient().get("state/" + id + "/cities");
+    let result = await this.http.get("state/" + id + "/cities");
     return result.data;
   }
 
   async getCityInfo(state, city) {
-    let result = await this.getClient().get("city-info/" + state + "/" + city);
+    let result = await this.http.get("city-info/" + state + "/" + city);
     return result.data;
   }
 
   async getVisualizations(params) {
-    let result = await this.getClient().get("visualizations", {
+    let result = await this.http.get("visualizations", {
       params: params
     });
     return result.data;
   }
 
   async loadTableByVisualization(alias, params) {
-    let result = await this.getClient().get("visualization/" + alias + "/table", {
+    let result = await this.http.get("visualization/" + alias + "/table", {
       params: params
     });
     return result.data;
   }
 
   async loadDataset(name, params) {
-    let result = await this.getClient().get("dataset/" + name, {
+    let result = await this.http.get("dataset/" + name, {
       params: params
     });
     return result.data;
   }
 
   async loadDatasetTable(name, params) {
-    let result = await this.getClient().get("dataset/" + name + "/table", {
+    let result = await this.http.get("dataset/" + name + "/table", {
       params: params
     });
     return result.data;
   }
 
   async loadVisualization(id, params) {
-    let result = await this.getClient().get("visualization/" + id, {
+    let result = await this.http.get("visualization/" + id, {
       params: params
     });
     return result.data;
   }
 
   async loadVisualizationByAlias(alias, params) {
-    let result = await this.getClient().get("visualization/" + alias, {
+    let result = await this.http.get("visualization/" + alias, {
       params: params
     });
     return result.data;
   }
 
   async getCategories() {
-    let result = await this.getClient().get("categories");
+    let result = await this.http.get("categories");
     return result.data;
   }
 

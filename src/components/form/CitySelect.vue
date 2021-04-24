@@ -5,27 +5,6 @@
     :value="value" 
     :placeholder="loading ? 'Carregando...' : 'CIDADE'"
   ></model-select>
-  <!-- <select v-bind="$attrs">
-    <option v-if="loading">Carregando...</option>
-    <option value="">Cidade</option>
-    <option v-if="!state">Selecione o estado</option>
-    <option 
-        :key="city.alias" 
-        v-for="city in cities" 
-        :value="city.alias"
-        :selected="value == city.alias">{{ city.name }}</option>
-  </select> -->
-  <!-- <v-select
-    :value="getValue()"
-    @input="setValue($event)"
-    :options="cities"
-    :searchable="true"
-    :close-on-select="true"
-    :show-labels="false"
-    label="name"
-    placeholder="Cidade"
-    track-by="alias"
-  ></v-select> -->
 </template>
 
 <script>

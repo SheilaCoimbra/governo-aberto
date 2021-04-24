@@ -17,7 +17,7 @@ export default {
   props: {
     value: String
   },
-  created() {
+  mounted() {
     this.loadStates();
   },
   data() {

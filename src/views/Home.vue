@@ -6,7 +6,7 @@
     </div>
 
     <div style="max-width: 350px; margin:auto; margin-top: 10px; margin-bottom: 10px; padding-right: 20px;">
-      <BrazilMap @selected="currentState = $event.alias" :selected-state="currentState" />
+      <BrazilMap @selected="currentState = $event.alias" :states="states" :selected-state="currentState" />
     </div>
 
     <div class="d-flex justify-content-center" style="margin:auto; max-width: 500px;">
@@ -43,7 +43,8 @@ export default {
   data() {
     return {
       currentState: "",
-      currentCity: ""
+      currentCity: "",
+      states: []
     }
   },
   methods: {
@@ -54,9 +55,9 @@ export default {
       const regionDetected = String(response.data.region).toUpperCase();
       const cityDetected = String(response.data.city).toUpperCase();
 
-      const states = await new ApiService().getStates();
+      this.states = await new ApiService().getStates();
       
-      const state = states.find(state => state.name.toUpperCase() == regionDetected);
+      const state = this.states.find(state => state.name.toUpperCase() == regionDetected);
       if(!state) return;
 
       this.currentState = state.alias;
@@ -68,7 +69,7 @@ export default {
       this.currentCity = city.alias;
     },
   },
-  mounted() {
+  created() {
     this.detectCity();
   },
   components: { StateSelect, CitySelect, BrazilMap },
