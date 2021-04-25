@@ -316,25 +316,22 @@
 </template>
 
 <script>
+import ApiService from '@/services/ApiService';
 
 export default {
-  props: {
-    selectedState : {
-      type: String
-    },
-    states: {
-      type: Array,
-      required: true,
-      default: () => { return []; }
-    }
-  },
+  props: [
+    'selectedState'
+  ],
   created() {
-    if(this.selectedState)
-      this.setStateByAlias(this.selectedState);
+    this.loadStates().then(() => {
+      if(this.selectedState)
+        this.setStateByAlias(this.selectedState);
+    });
   },
   data() {
     return {
-      currentState: null
+      currentState: null,
+      states: []
     }
   },
   methods: {
@@ -349,6 +346,10 @@ export default {
       if(state) {
         this.currentState = state;  
       }
+    },
+    async loadStates() {
+      let api = new ApiService();
+      this.states = await api.getStates();
     }
   },
   watch: {

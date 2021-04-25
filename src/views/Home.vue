@@ -50,14 +50,13 @@ export default {
     async detectCity() {
       try {
         const result = await new ApiService().detectCity();
-
-        if(result.state) {
+        if(result.state && result.city) {
           this.currentState = result.state.alias;
+          this.$nextTick(() => { 
+            this.currentCity = result.city.alias;
+          });
         }
 
-        if(result.city) {
-          this.currentCity = result.city.alias;
-        }
       } catch (error) {
         console.log("Cannot detect your city");
       }
