@@ -23,7 +23,7 @@
           </div>
         </div>
         <div v-if="showFooter" class="card-footer text-left" style="padding: .30rem .30rem; min-height: 30px;">
-          <div class="d-flex justify-content-between">
+          <div>
             <div :key="index" v-for="(note,index) in visualization.notes" class="small" style="font-size: 75%">
               <span class="font-weight-bold" style="font-size:80%">{{ index + 1 }}</span>
               {{ note }}

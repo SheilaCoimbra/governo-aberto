@@ -2,7 +2,7 @@
   <div class="btn-group dropleft">
     <button 
       type="button" 
-      class="btn dropdown-toggle" 
+      class="btn dropdown-toggle btn-category" 
       style="border-radius: 0px;"
       :class="categorySelected ? categorySelected.btn_class : false"
       data-toggle="dropdown" 
@@ -53,6 +53,10 @@ export default {
 }
 </script>
 
-<style>
-
+<style lang="scss" scoped>
+  .btn-category {
+    @media screen and(min-width: 700px) {
+      width: 300px;
+    }
+  }
 </style>
