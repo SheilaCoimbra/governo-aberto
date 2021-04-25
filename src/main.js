@@ -6,7 +6,7 @@ import {
   faBook, faUserShield, faBus, faDollarSign, 
   faBuilding, faAmbulance, faSearch, faQuestionCircle,
   faFileAlt, faClock, faArrowLeft, faFileCsv, faFileCode, 
-  faTable, faEdit
+  faTable, faEdit, faLightbulb, faThumbsUp
 } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import VueGtag from "vue-gtag"
@@ -14,7 +14,8 @@ import VueGtag from "vue-gtag"
 library.add(faBook, faUserShield, faBus, 
   faDollarSign, faBuilding, faAmbulance,
   faSearch, faQuestionCircle, faFileAlt, faClock,
-  faArrowLeft, faFileCsv, faFileCode, faTable, faEdit);
+  faArrowLeft, faFileCsv, faFileCode, faTable, faEdit,
+  faLightbulb, faThumbsUp);
 Vue.component('fa', FontAwesomeIcon);
 
 Vue.config.productionTip = false
