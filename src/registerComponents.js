@@ -13,6 +13,7 @@ Vue.component('btn-share-facebook', require("@/components/buttons/ButtonShareFac
 Vue.component('btn-share-whatsapp', require("@/components/buttons/ButtonShareWhatsapp").default);
 Vue.component('btn-share-linkedin', require("@/components/buttons/ButtonShareLinkedin").default);
 Vue.component('btn-share-telegram', require("@/components/buttons/ButtonShareTelegram").default);
+Vue.component('btn-feedback', require("@/components/buttons/ButtonFeedback").default);
 Vue.component('select-category', require("@/components/form/CategorySelect").default);
 
 Vue.component('card-reference', require("@/components/cards/CardReference").default);

@@ -81,6 +81,20 @@ export default class ApiService {
     return result.data;
   }
 
+  async saveLike(visualization, city) {
+    let result = await this.http.get("/like/" + visualization, {
+      params: {
+        city: city
+      }
+    });
+    return Boolean(result.data);
+  }
+
+  async hasLike(visualization) {
+    let result = await this.http.get("/like/" + visualization + "/verify");
+    return Boolean(result.data);
+  }
+
   getDownloadTableRoute(alias, type, city) {
     return process.env.VUE_APP_API_URL + `/visualization/${alias}/download/${type}?city=` + city;
   }

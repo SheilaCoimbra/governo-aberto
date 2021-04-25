@@ -7,29 +7,32 @@
         <h6 class="visualization_subtitle d-block d-sm-none">{{ city.name + '/' + city.state.initials }}</h6>
         <CardVisualization :city="city" :visualization="visualization" :show-title="false" :show-footer="false"/>
 
-        <label>Compartilhe: </label>
+        <div class="d-flex justify-content-between align-items-center" style="border-bottom: 1px solid rgba(0,0,0,.125); border-left: 1px solid rgba(0,0,0,.125); border-right: 1px solid rgba(0,0,0,.125);">
+          <btn-feedback :visualization-alias="visualization.alias" :city="city.id"/>
+          <div>
+            <btn-share-facebook 
+              :url="'https://governoaberto.org' + $route.fullPath" 
+              :title="visualization.title + ' - ' + city.name + '/' + city.state.initials" 
+              :description="visualization.title" 
+              :quote="visualization.title + ' - ' + city.name + '/' + city.state.initials" 
+              hashtags="governoaberto"/>
 
-        <btn-share-facebook 
-          :url="'https://governoaberto.org' + $route.fullPath" 
-          :title="visualization.title + ' - ' + city.name + '/' + city.state.initials" 
-          :description="visualization.title" 
-          :quote="visualization.title + ' - ' + city.name + '/' + city.state.initials" 
-          hashtags="governoaberto"/>
+            <btn-share-whatsapp 
+              :url="'https://governoaberto.org' + $route.fullPath" 
+              :title="visualization.title + ' - ' + city.name + '/' + city.state.initials" 
+              :description="visualization.title" />
 
-        <btn-share-whatsapp 
-          :url="'https://governoaberto.org' + $route.fullPath" 
-          :title="visualization.title + ' - ' + city.name + '/' + city.state.initials" 
-          :description="visualization.title" />
+            <btn-share-linkedin 
+              :url="'https://governoaberto.org' + $route.fullPath" 
+              :title="visualization.title + ' - ' + city.name + '/' + city.state.initials" 
+              :description="visualization.title" />
 
-        <btn-share-linkedin 
-          :url="'https://governoaberto.org' + $route.fullPath" 
-          :title="visualization.title + ' - ' + city.name + '/' + city.state.initials" 
-          :description="visualization.title" />
-
-        <btn-share-telegram 
-          :url="'https://governoaberto.org' + $route.fullPath" 
-          :title="visualization.title + ' - ' + city.name + '/' + city.state.initials" 
-          :description="visualization.title" />
+            <btn-share-telegram 
+              :url="'https://governoaberto.org' + $route.fullPath" 
+              :title="visualization.title + ' - ' + city.name + '/' + city.state.initials" 
+              :description="visualization.title" />
+          </div>
+        </div>
       </div>
       <div class="col-12 col-sm-12 col-md-7 col-lg-7 text-left mt-2" v-if="visualization">
         <label class="visualization_title d-none d-sm-block">{{ visualization.title }}</label>
