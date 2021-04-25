@@ -29,6 +29,11 @@ export default class ApiService {
     return result.data;
   }
 
+  async detectCity() {
+    let result = await this.http.get("city/detect");
+    return result.data;
+  }
+
   async getVisualizations(params) {
     let result = await this.http.get("visualizations", {
       params: params

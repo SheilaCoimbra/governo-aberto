@@ -35,7 +35,6 @@
 import StateSelect from '@/components/form/StateSelect';
 import CitySelect from '@/components/form/CitySelect';
 import BrazilMap from '@/components/BrazilMap';
-import axios from 'axios';
 import ApiService from '@/services/ApiService';
 
 export default {
@@ -49,24 +48,19 @@ export default {
   },
   methods: {
     async detectCity() {
-      const instance = axios.create({ baseURL: "https://ipinfo.io/" });
-      const response = await instance.get("/json", { params: { token: "c06c6b70576982" } });
-      
-      const regionDetected = String(response.data.region).toUpperCase();
-      const cityDetected = String(response.data.city).toUpperCase();
+      try {
+        const result = await new ApiService().detectCity();
 
-      this.states = await new ApiService().getStates();
-      
-      const state = this.states.find(state => state.name.toUpperCase() == regionDetected);
-      if(!state) return;
+        if(result.state) {
+          this.currentState = result.state.alias;
+        }
 
-      this.currentState = state.alias;
-      const cities = await new ApiService().getCities(state.alias);
-      const city = cities.find(city => city.name.toUpperCase() == cityDetected);
-
-      if(!city) return;
-      
-      this.currentCity = city.alias;
+        if(result.city) {
+          this.currentCity = result.city.alias;
+        }
+      } catch (error) {
+        console.log("Cannot detect your city");
+      }
     },
   },
   created() {
