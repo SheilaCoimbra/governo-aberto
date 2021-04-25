@@ -49,9 +49,11 @@ export default {
   components: {
     DatasetTable
   },
-  $route(){
-    this.loading = true;
-    this.loadCityInfo().then(() => { this.loadDataset().then(() => { this.loading = false; }); });
-  },
+  watch: {
+    $route(){
+      this.loading = true;
+      this.loadCityInfo().then(() => { this.loadDataset().then(() => { this.loading = false; }); });
+    },
+  }
 }
 </script>
