@@ -25,7 +25,7 @@
           <router-link class="nav-link" :to="{ name: 'Home' }">Sobre <span class="sr-only">(current)</span></router-link>
         </li>
       </ul>
-      <form class="form-inline my-2 my-lg-0 d-none d-sm-none d-md-block" v-if="!isMobile()">
+      <form class="form-inline my-2 my-lg-0 d-none d-sm-none d-md-block" v-if="!isMobile() && !($route.name == 'Home')">
         <div class="d-flex justify-content-end" style="min-width: 300px;">
           <StateSelect v-model="currentState" class="form-control mr-2" style="height: 35px;"/>
           <CitySelect v-model="currentCity" :state="currentState" class="form-control" />
