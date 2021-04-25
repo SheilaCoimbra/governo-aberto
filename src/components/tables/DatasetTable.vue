@@ -20,7 +20,7 @@
           </thead>
           <tbody>
             <tr :key="i" v-for="i in getTableRowsNumber()">
-              <td :key="index" v-for="(column, index) in table">{{ column.data[i] }}</td>
+              <td :key="index" v-for="(column, index) in table">{{ getValue(column.data[i]) }}</td>
             </tr>
           </tbody>
         </table>
@@ -53,6 +53,12 @@ export default {
     });
   },
   methods: {
+    getValue(value) {
+      if(typeof value == "string" || Number.isInteger(value))
+        return value;
+
+      return value.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL', maximumFractionDigits: 2 });
+    },
     async loadCityInfo() {
       const cityInfo = await new ApiService().getCityInfo(this.$route.params.state, this.$route.params.city);
       

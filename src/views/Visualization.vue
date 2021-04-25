@@ -72,7 +72,7 @@
             </thead>
             <tbody>
               <tr :key="i" v-for="i in getTableRowsNumber()">
-                <td :key="index" v-for="(column, index) in table.data">{{ column.data[i] }}</td>
+                <td :key="index" v-for="(column, index) in table.data">{{ getValue(column.data[i]) }}</td>
               </tr>
             </tbody>
           </table>
@@ -102,6 +102,13 @@ export default {
     }
   },
   methods: {
+    getValue(value) {
+      if(this.visualization.data.type == 'money-pie-chart') {
+        return value.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL', maximumFractionDigits: 2 });
+      }
+
+      return value;
+    },
     async loadCityInfo() {
       const cityInfo = await new ApiService().getCityInfo(this.$route.params.state, this.$route.params.city);
       

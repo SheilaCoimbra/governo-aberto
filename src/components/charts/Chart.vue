@@ -6,6 +6,7 @@
 import BarChart from '@/components/charts/BarChart';
 import LineChart from '@/components/charts/LineChart';
 import PieChart from '@/components/charts/PieChart';
+import MoneyPieChart from '@/components/charts/MoneyPieChart';
 
 export default {
   props: ['data', 'type'],
@@ -20,12 +21,15 @@ export default {
       if(this.type == 'pie-chart') {
         return "PieChart";
       }
+      if(this.type == 'money-pie-chart') {
+        return "MoneyPieChart";
+      }
 
       return false;
     }
   },
   components: {
-    BarChart, LineChart, PieChart
+    BarChart, LineChart, PieChart, MoneyPieChart
   }
 }
 </script>
