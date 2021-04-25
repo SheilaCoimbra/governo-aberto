@@ -20,6 +20,12 @@
       <div v-bind:key="visualization.id" v-for="visualization in visualizations" class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-1 mb-3">
         <CardVisualization :city="city" :visualization="visualization" />
       </div>
+
+      <div class="col-12" v-if="!loading && visualizations.length == 0">
+        <div class="alert alert-info text-center" role="alert">
+          Nenhuma visualização encontrada com esses filtros
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -38,7 +44,7 @@ export default {
       visualizations: [],
       city: null,
       state: null,
-      loading: false
+      loading: true
     }
   },
   methods: {
