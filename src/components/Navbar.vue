@@ -16,13 +16,13 @@
           <router-link class="nav-link" :to="getFixedDashboardRoute()">Painel <span class="sr-only">(current)</span></router-link>
         </li>
         <li class="nav-item">
-          <router-link class="nav-link" :to="{ name: 'Home' }">Home <span class="sr-only">(current)</span></router-link>
+          <router-link class="nav-link" :to="{ name: 'Home' }">Home</router-link>
         </li>
         <li class="nav-item">
-          <router-link class="nav-link" :to="{ name: 'Projects' }">Projetos <span class="sr-only">(current)</span></router-link>
+          <router-link class="nav-link" :to="{ name: 'Projects' }">Projetos</router-link>
         </li>
         <li class="nav-item">
-          <router-link class="nav-link" :to="{ name: 'Home' }">Sobre <span class="sr-only">(current)</span></router-link>
+          <a class="nav-link" href="mailto:jefferson.mcardoso@gmail.com">Contato</a>
         </li>
       </ul>
       <form class="form-inline my-2 my-lg-0 d-none d-sm-none d-md-block" v-if="!isMobile() && !($route.name == 'Home')">
