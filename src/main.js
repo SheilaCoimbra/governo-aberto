@@ -38,6 +38,10 @@ Vue.use(VueGtag, {
 import VueSocialSharing from 'vue-social-sharing';
 Vue.use(VueSocialSharing);
 
+import VModal from 'vue-js-modal/dist/index.nocss.js'
+import 'vue-js-modal/dist/styles.css'
+Vue.use(VModal)
+
 require("./registerComponents");
 require("./registerPlugins");
 

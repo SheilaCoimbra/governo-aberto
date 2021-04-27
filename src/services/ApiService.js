@@ -90,6 +90,15 @@ export default class ApiService {
     return Boolean(result.data);
   }
 
+  async saveFeedback(visualization, city, comment, contact) {
+    let result = await this.http.post("/feedback/" + visualization, {
+      comment: comment,
+      contact: contact,
+      city: city
+    });
+    return Boolean(result.data);
+  }
+
   async hasLike(visualization) {
     let result = await this.http.get("/like/" + visualization + "/verify");
     return Boolean(result.data);
