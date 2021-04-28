@@ -12,7 +12,7 @@
     <form class="my-3" v-if="city" @submit.prevent="loadVisualizations()">
       <div class="d-flex justify-content-between align-items-center">
         <btn-search @search="titleSearch = $event; loadVisualizations()"></btn-search>
-        <select-category @selected="categorySelected = $event"></select-category>
+        <select-category v-model="categorySelected"></select-category>
       </div>
     </form>
     <loading :loading="loading"></loading>
@@ -76,6 +76,13 @@ export default {
     let api = new ApiService();
     this.categories = await api.getCategories();
     this.loadCityInfo().then(() => this.loadVisualizations());
+
+    if(this.$route.query.category) {
+      const categorySelected = this.categories.find(category => category.label == this.$route.query.category);
+      if(categorySelected) {
+        this.categorySelected = categorySelected;
+      }
+    }
   },
   components: {
     CardVisualization, CityHeader

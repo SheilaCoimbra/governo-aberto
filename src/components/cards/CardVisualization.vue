@@ -7,7 +7,7 @@
               style="text-overflow: ellipsis; white-space: nowrap; overflow: hidden; font-size: .90rem">
               {{ visualization.title }}
             </label>
-            <router-link class="btn btn-sm text-primary" :to="{ path: getExploreRoute(visualization) }">
+            <router-link class="btn btn-sm text-primary" :to="{ path: getExploreRoute(visualization) }" :title="'Ver detalhes (' + visualization.title + ')'">
               <fa class="fa-2x" icon="search" />
             </router-link>
         </div>

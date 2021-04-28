@@ -2,12 +2,12 @@
   <div>
     <loading :loading="loading"></loading>
     <div class="row">
-      <div class="col-12 col-sm-12 col-md-5 col-lg-5 text-right" v-if="visualization && visualization.type == 'chart'">
-        <label class="visualization_title d-block d-sm-none">{{ visualization.title }}</label>
-        <h6 class="visualization_subtitle d-block d-sm-none">{{ city.name + '/' + city.state.initials }}</h6>
+      <div class="col-12 col-sm-12 col-md-5 col-lg-5" v-if="visualization && visualization.type == 'chart'">
+        <label class="visualization_title d-block d-sm-none text-right">{{ visualization.title }}</label>
+        <h6 class="visualization_subtitle d-block d-sm-none text-right">{{ city.name + '/' + city.state.initials }}</h6>
         <CardVisualization :city="city" :visualization="visualization" :show-title="false" :show-footer="false"/>
-
-        <div class="d-flex justify-content-between align-items-center" style="border-bottom: 1px solid rgba(0,0,0,.125); border-left: 1px solid rgba(0,0,0,.125); border-right: 1px solid rgba(0,0,0,.125);">
+        
+        <div class="d-flex justify-content-between align-items-center visualization_border">
           <btn-feedback :visualization-alias="visualization.alias" :city="city.id"/>
           <div>
             <btn-share-facebook 
@@ -34,13 +34,15 @@
           </div>
         </div>
       </div>
+      
       <div class="col-12 col-sm-12 col-md-7 col-lg-7 text-left mt-2" v-if="visualization">
         <label class="visualization_title d-none d-sm-block">{{ visualization.title }}</label>
         <h6 class="visualization_subtitle d-none d-sm-block">{{ city.name + '/' + city.state.initials }}</h6>
 
-        <div v-if="visualization.description">{{ visualization.description }}</div>
+        <div class="text-justify" v-if="visualization.description">{{ visualization.description }}</div>
 
         <div class="mt-3">
+          <h5>Quer saber mais?</h5>
           <h6 v-if="visualization.source">
             <fa class="fa" icon="file-alt"></fa> 
             Dados Originais: <a target="_blank" :href="visualization.source.link">{{ visualization.source.title }}</a>
@@ -52,6 +54,9 @@
           <h6 v-if="visualization.period">
             <fa class="fa" icon="clock"></fa>
             Período: {{ visualization.period }}
+          </h6>
+          <h6>
+            <router-link :to="getDashboardCategoryRoute()">Acesse outros gráficos na categoria {{ visualization.category }}</router-link>
           </h6>
         </div>
 
@@ -140,6 +145,12 @@ export default {
 
       return [...Array(length).keys()];
     },
+    getDashboardCategoryRoute() {
+      return { 
+        query: { category: this.visualization.category },
+        path: '/cidades/' + this.$route.params.state + '/' + this.$route.params.city 
+      };
+    },
     getDatasetRoute() {
       return {
         name: 'Dataset',
@@ -188,5 +199,11 @@ export default {
     @media (min-width: 1200px) {  
       font-size: 2.0rem;
     }
+  }
+
+  .visualization_border {
+    border-bottom: 1px solid rgba(0,0,0,.125); 
+    border-left: 1px solid rgba(0,0,0,.125); 
+    border-right: 1px solid rgba(0,0,0,.125);
   }
 </style>

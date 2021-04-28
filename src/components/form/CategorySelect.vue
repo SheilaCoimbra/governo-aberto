@@ -28,6 +28,11 @@
 import ApiService from '@/services/ApiService';
 
 export default {
+  props: {
+    value: {
+      type: Object
+    }
+  },
   data() {
     return {
       categories: [],
@@ -38,7 +43,11 @@ export default {
     let api = new ApiService();
     api.getCategories().then(categories => {
       this.categories = categories;
-      this.categorySelected = this.categories[0];
+      if(this.value) {
+        this.categorySelected = JSON.parse(JSON.stringify(this.value));
+      } else {
+        this.categorySelected = this.categories[0];
+      }
     });
   },
   methods: {
@@ -47,7 +56,7 @@ export default {
     },
     selectCategory(category) {
       this.categorySelected = category;
-      this.$emit('selected', JSON.parse(JSON.stringify(category)));
+      this.$emit('input', JSON.parse(JSON.stringify(category)));
     },
   }
 }
