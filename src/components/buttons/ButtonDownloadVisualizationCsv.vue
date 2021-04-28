@@ -18,7 +18,7 @@ export default {
   },
   computed: {
     url() {
-      return new ApiService().getDownloadTableRoute(this.alias, 'json', this.city);
+      return new ApiService().getDownloadTableRoute(this.alias, 'csv', this.city);
     }
   }
 }
