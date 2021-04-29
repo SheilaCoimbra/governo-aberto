@@ -50,7 +50,7 @@ export default {
     async detectCity() {
       try {
         const result = await new ApiService().detectCity();
-        if(result.state && result.city) {
+        if(result.state && result.city && !this.currentState) {
           this.currentState = result.state.alias;
           this.$nextTick(() => { 
             this.currentCity = result.city.alias;

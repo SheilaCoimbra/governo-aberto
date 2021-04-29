@@ -30,7 +30,7 @@
           <StateSelect v-model="currentState" class="form-control mr-2" style="height: 35px;"/>
           <CitySelect v-model="currentCity" :state="currentState" class="form-control" />
           <div style="padding-top: 4px;">
-            <router-link class="text-white ml-2" :to="getRoute()"><fa class="nav-search-icon" icon="search" /></router-link>
+            <router-link class="text-white ml-2" :to="getRoute()"><fa class="nav-search-icon" icon="search" title="Ver painel para o município"/></router-link>
           </div>
         </div>
       </form>
