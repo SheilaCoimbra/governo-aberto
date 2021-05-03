@@ -5,7 +5,7 @@
         <span aria-hidden="true">&times;</span>
       </button>
       <p style="margin-bottom: .1rem;">Esse projeto faz parte do TCC de <a href="https://www.linkedin.com/in/jefferson-cardoso/" target="_blank">Jefferson Cardoso</a>, aluno de Ciência da Computação na <a target="_blank" href="https://www.feevale.br/">Universidade Feevale/RS</a>.</p>
-      <p class="mb-0">Explore as cidades que desejar e depois preencha a <a target="_blank" href="https://forms.gle/GCEbWsMw2QiGXiPy8">pesquisa</a> para ajudar no trabalho :)</p>
+      <p class="mb-0">Acesse as cidades que desejar, clique nas lupas para ver mais e depois preencha a <a target="_blank" href="https://forms.gle/GCEbWsMw2QiGXiPy8">pesquisa</a> para ajudar no trabalho :)</p>
     </div>
     <CityHeader :city="city" :state="state"/>
     
