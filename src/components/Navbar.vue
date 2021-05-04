@@ -25,7 +25,7 @@
           <a class="nav-link" href="mailto:jefferson.mcardoso@gmail.com">Contato</a>
         </li>
       </ul>
-      <span v-if="!isMobile()" class="text-white pr-2 d-none d-md-block d-lg-block">Trocar cidade</span>
+      <span v-if="!isMobile() && !($route.name == 'Home')" class="text-white pr-2 d-none d-md-block d-lg-block">Trocar cidade</span>
       <form class="form-inline my-2 my-lg-0 d-none d-sm-none d-md-block" v-if="!isMobile() && !($route.name == 'Home')">
         <div class="d-flex justify-content-end" style="min-width: 300px;">
           <StateSelect v-model="currentState" class="form-control mr-2" style="height: 35px;"/>
