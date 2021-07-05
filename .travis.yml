@@ -1,0 +1,10 @@
+language: node_js
+node_js:
+  - 12
+  
+env:
+  - VUE_APP_API_URL=https://api.governoaberto.org
+  
+script:
+  - npm install
+  - npm run build
