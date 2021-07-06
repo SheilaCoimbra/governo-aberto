@@ -1,0 +1,23 @@
+name: Build governo aberto project
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@master
+      - uses: actions/setup-node@master
+
+      - run: npm install
+      - run: npm run build
+
+      - env:
+           VUE_APP_API_URL: https://api.governoaberto.org
