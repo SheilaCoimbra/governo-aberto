@@ -4,7 +4,7 @@ node_js:
   
 env:
   - VUE_APP_API_URL=https://api.governoaberto.org
-  
+
 script:
   - npm install
   - npm run build
