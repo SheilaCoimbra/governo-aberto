@@ -7,7 +7,7 @@
               style="text-overflow: ellipsis; white-space: nowrap; overflow: hidden; font-size: .90rem">
               {{ visualization.title }}
             </label>
-            <router-link class="btn btn-sm btn-primary" :to="{ path: getExploreRoute(visualization) }" :title="'Ver detalhes (' + visualization.title + ')'">
+            <router-link class="btn btn-sm btn-primary text-nowrap" :to="{ path: getExploreRoute(visualization) }" :title="'Ver detalhes (' + visualization.title + ')'">
               Ver <fa icon="plus" />
             </router-link>
         </div>
